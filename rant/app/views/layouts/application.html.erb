@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Rantly</title>
+  <title>Rant</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+
+<header>
+  <%= link_to "Rant.ly", root_path %> <%= link_to "Login", signin_path %> <%= link_to "JOIN", new_registration_path %>
+
+</header>
+
 <body>
 
 <%= yield %>
