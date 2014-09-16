@@ -1,1 +1,55 @@
-<p>registration</p>
+<div class="form-container">
+  <div class="form-padding">
+<h1>Register</h1>
+
+<%= form_for @user, url: registrations_path do |f| %>
+  <% if @user.errors.any? %>
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+      <div class="join-flex-container">
+    <div class="join-flex">
+      <div><%= f.label :username %></div>
+      <%= f.text_field :username %>
+
+      <div><%= f.label :first_name %></div>
+      <%= f.text_field :first_name %>
+    </div>
+
+    <div class="join-flex">
+      <div><%= f.label :password_digest, "Password" %></div>
+      <%= f.password_field :password_digest %>
+
+      <div><%= f.label :last_name %></div>
+      <%= f.text_field :last_name %>
+    </div>
+
+    </div>
+
+
+    <div>
+      <%= f.label :bio %>
+      <%= f.text_area :bio%>
+      <!--, :size=>"30x5"-->
+    </div>
+
+<div>
+     <%= f.label :rant_rate, "How often do you rant?" %>
+
+  <div class="radio-button-flex-container">
+    <div class="radio-button-flex"><%= f.radio_button :rant_rate,'daily' %> <%= f.label :rant_rate_daily, "Daily" %></div>
+    <div class="radio-button-flex"><%= f.radio_button :rant_rate,'weekly' %> <%= f.label :rant_rate_monthly, "Weekly" %></div>
+    <div class="radio-button-flex"><%= f.radio_button :rant_rate,'monthly' %> <%= f.label :rant_rate_monthly, "Monthly" %></div>
+  </div>
+
+</div>
+
+
+    </div>
+      <div class="form-submit"> <%= f.submit "REGISTER", :class => "join-form-submit-button"  %></div>
+
+<% end %>
+  </div>

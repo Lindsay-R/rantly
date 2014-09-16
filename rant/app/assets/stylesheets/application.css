@@ -13,3 +13,243 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+    font-family: 'Nunito', sans-serif;
+    box-sizing: border-box;
+    font-weight: 300;
+}
+
+body{
+    background-color: #999999;
+}
+
+h1{
+    font-size: 25px;
+}
+
+
+
+
+
+/*-------- application ---------*/
+
+.app-flex-container {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    /*justify-content: flex-start;*/
+    /*align-content: flex-start;*/
+    /*align-items: baseline;*/
+
+    background-color: #393B39;
+
+}
+
+.app-flex1 {
+    /*flex: 1 0 150px;*/
+    border-right: thin solid green;
+    height: 60px;
+    width: 150px;
+    padding-top: 10px;
+
+
+}
+
+.app-flex2 {
+    flex: 5 0 40px;
+    margin-right: 15px;
+    height: 60px;
+    width: 45px;
+    text-align:right;
+    padding-top: 16px;
+
+
+}
+.app-flex3 {
+    flex: 0 0 140px;
+    height: 60px;
+    width: 140px;
+    padding-top: 16px;
+
+}
+
+
+.join-button a{
+    color: white;
+    text-decoration: none;
+    background-color: green;
+    border: thin solid gray;
+    border-radius: 3px;
+    font-size: 18px;
+    padding: 6px 40px 6px 40px;
+}
+
+.login-link a{
+    color: lightgray;
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+.logo-link a{
+    color: lightgray;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 24px;
+    margin-left: 40px;
+}
+/*-------- end application ---------*/
+
+
+
+
+/*-------- homepage ---------*/
+.section-white {
+    background-color: white;
+    padding-top: 4%;
+    padding-bottom: 4%;
+}
+
+.home-flex-container{
+    margin: 10% 10% 10% 10%;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+    align-items: flex-start;
+}
+.home-flex1{
+    height: 150px;
+    width: 150px;
+}
+.home-flex2{
+    flex: 0 0 60%;
+    height: 150px;
+}
+
+h1.home-rant {
+    font-size: 60px;
+    margin: 0;
+
+}
+p.no-margin{
+    margin: 0;
+}
+
+
+.home-bottom{
+    color: whitesmoke;
+    font-size: 14px;
+}
+
+.text-center{
+    text-align: center;
+}
+
+/*-------- end homepage ---------*/
+
+
+
+
+/*-------- form general ---------*/
+
+.form-container{
+    background-color: white;
+    border: thin solid black;
+    width:60%;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-submit{
+    border-top: thin solid black;
+    padding: 15px;
+
+}
+
+.form-padding{
+    padding: 0px 15px 0px 15px;
+}
+/*-------- end form general ---------*/
+
+
+
+
+
+/*-------- login ---------*/
+
+.login-form-label{
+    margin-left: 10px;
+}
+
+.login-form-submit-button{
+    background-color: green;
+    color: white;
+    border: thin solid gray;
+    border-radius: 3px;
+    font-weight: 300;
+    font-size: 18px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+
+    width: 100%
+
+}
+
+.login-form-field{
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+/*-------- end login ---------*/
+
+
+
+
+/*-------- Join ---------*/
+
+.join-flex-container{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: flex-start;
+    align-items: flex-start;
+}
+
+.join-flex{
+
+}
+
+.radio-button-flex-container{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+    align-items: flex-start;
+
+    padding-bottom: 20px;
+}
+.radio-button-flex{
+    flex: 0 0 150px;
+}
+
+.join-form-submit-button{
+    background-color: green;
+    color: white;
+    border: thin solid gray;
+    border-radius: 3px;
+    font-weight: 300;
+    font-size: 18px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+
+    width: 100%
+
+}
+
+
+/*-------- end Join ---------*/

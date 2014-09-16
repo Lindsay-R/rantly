@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
-  root "dashboard#show"
+  root "home#show"
 
 
   resources :registrations, only: [:new, :create]
-  resource :session, only: [:new, :create, :destroy]
+  resources :sessions
+  resource :home, only: [:show]
+  resources :dashboard, only: [:show]
 
   get "signin" => "sessions#new", as: :signin
   post "signin" => "sessions#create"
