@@ -5,9 +5,9 @@ Rails.application.routes.draw do
   resources :registrations, only: [:new, :create]
   resources :sessions
   resource :home, only: [:show]
-  resources :dashboard, only: [:show]
+  resources :dashboards
 
   get "signin" => "sessions#new", as: :signin
   post "signin" => "sessions#create"
-  delete "signout" => "sessions#destroy", as: :signout
+  get "signout" => "sessions#destroy", as: :signout
 end

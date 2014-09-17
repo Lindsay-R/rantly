@@ -1,6 +1,6 @@
 <div class="form-container">
-  <div class="form-padding">
-<h1>Register</h1>
+
+<h1 class="form-padding">Register</h1>
 
 <%= form_for @user, url: registrations_path do |f| %>
   <% if @user.errors.any? %>
@@ -13,28 +13,27 @@
       <div class="join-flex-container">
     <div class="join-flex">
       <div><%= f.label :username %></div>
-      <%= f.text_field :username %>
+      <%= f.text_field :username, :class => "join-form-field" %>
 
       <div><%= f.label :first_name %></div>
-      <%= f.text_field :first_name %>
+      <%= f.text_field :first_name, :class => "join-form-field" %>
     </div>
 
     <div class="join-flex">
-      <div><%= f.label :password_digest, "Password" %></div>
-      <%= f.password_field :password_digest %>
+      <div><%= f.label :password %></div>
+      <%= f.password_field :password, :class => "join-form-field" %>
 
       <div><%= f.label :last_name %></div>
-      <%= f.text_field :last_name %>
+      <%= f.text_field :last_name, :class => "join-form-field" %>
     </div>
 
     </div>
 
+    <div class="form-padding">
 
-    <div>
-      <%= f.label :bio %>
-      <%= f.text_area :bio%>
-      <!--, :size=>"30x5"-->
-    </div>
+      <div><%= f.label :bio %></div>
+      <%= f.text_area :bio, :class => "join-form-area"%>
+
 
 <div>
      <%= f.label :rant_rate, "How often do you rant?" %>

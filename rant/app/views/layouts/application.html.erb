@@ -7,6 +7,10 @@
 
   <link href='http://fonts.googleapis.com/css?family=Nunito:700,300,400' rel='stylesheet' type='text/css'> <!-- use a google font -->
 
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
   <%= stylesheet_link_tag  "http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css" %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -15,6 +19,31 @@
 
 <header>
 
+
+  <div>
+  <% if current_user %>
+    <section class="app-flex-container">
+      <div class="app-flex1 logo-link">
+        <%= link_to "Rant.ly", root_path %>
+      </div>
+
+      <div class="app-flex4 dash-links">
+        <%= link_to "#{current_user.username}'s Dashboard" , dashboard_path(current_user) %> <span class="green">|</span>
+        <%= link_to "Following" , root_path %> <span class="green">|</span>
+        <%= link_to "Favorites" , root_path %> <span class="green">|</span>
+        <%= link_to "Search" , root_path %>
+      </div>
+
+      <div class="app-flex5">
+        <div class="logout-button">
+          <%= link_to "LOGOUT", signout_path %>
+        </div>
+      </div>
+    </section>
+
+
+
+  <% else %>
 
 
   <section class="app-flex-container">
@@ -31,9 +60,11 @@
       <%= link_to "JOIN", new_registration_path %>
       </div>
     </div>
-
   </section>
 
+
+  <% end %>
+  </div>
 
 
 
