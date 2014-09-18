@@ -97,11 +97,13 @@ h1{
     margin-left: 40px;
 }
 
-.dash-links {
-    color: lightgray;
-    font-size: 16px;
+#highlight {
+    color: lightgreen;
+    text-decoration: none;
 }
+
 .dash-links a:link{
+
     color: lightgray;
     text-decoration: none;
 }
@@ -113,10 +115,7 @@ h1{
     color: white;
     text-decoration: none;
 }
-.dash-links .highlight{
-     color: lightgreen;
-     text-decoration: none;
- }
+
 .green {
     color: lightgreen;
     font-size: 16px;

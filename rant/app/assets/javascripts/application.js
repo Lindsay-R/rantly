@@ -15,17 +15,26 @@
 //= require turbolinks
 //= require_tree .
 
+$(document).ready(function() {
+
+
 
 //making menu bar highlight current page
 $(function(){
   // this will get the full URL at the address bar
   var url = window.location.href;
-
   // passes on every "a" tag
-  $("#sub-header a").each(function() {
+  $(".dash-links a:link").each(function() {
     // checks if its the same on the address bar
     if(url == (this.href)) {
-      $(this).closest("li").addClass("highlight");
+      //add the id #highlight to the a element that matches
+      $(this).closest( 'a' ).attr("id", "highlight");
+//      $(this).closest("span").addClass("highlight");
     }
   });
+});
+
+
+
+
 });
