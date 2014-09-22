@@ -7,6 +7,12 @@ Rails.application.routes.draw do
   resource :home, only: [:show]
   resources :dashboards
 
+
+  resources :users do
+    resources :rants
+  end
+
+
   get "signin" => "sessions#new", as: :signin
   post "signin" => "sessions#create"
   get "signout" => "sessions#destroy", as: :signout

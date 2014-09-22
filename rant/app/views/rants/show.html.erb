@@ -1,0 +1,42 @@
+<div class="dash-flex-container">
+
+  <div class="dash-flex1">
+    <h2 class="text-center white-text"><%= current_user.first_name %> <%= current_user.last_name %></h2>
+    <hr>
+
+    <%= form_for [@user, @new_rant] do |f| %>
+      <% if @new_rant.errors.any? %>
+        <ul>
+          <% @new_rant.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      <% end %>
+
+
+      <div class="white-text"><%= f.label :title, "A rant about:" %></div>
+      <%= f.text_field :title, :class => "rant-form-field" %>
+
+      <div class="white-text"><%= f.label :verbage, "Rant:" %></div>
+      <%= f.text_area :verbage, :class => "rant-form-area", placeholder: "Rant about something, or at someone..." %>
+
+
+      <div><%= f.submit :RANT, :class => "rant-form-submit-button" %></div>
+
+    <% end %>
+
+  </div>
+
+  <div class="dash-flex2">
+
+    <h1 class="text-center rant-label"><%= @rant.title.upcase %></h1> <%= link_to "Favorite", root_path  %>
+
+    <hr>
+
+<p><%= @rant.verbage %></p>
+
+
+  </div>
+
+
+</div>

@@ -68,9 +68,7 @@ h1{
     height: 60px;
     width: 140px;
     padding-top: 16px;
-
 }
-
 
 .join-button a{
     color: white;
@@ -337,6 +335,7 @@ p.no-margin{
     /*flex: 0 0 300px;*/
     width: 30%;
     padding: 0px 20px 0px 20px;
+
 }
 .dash-flex2 {
     /*flex: 0 0 300px;*/
@@ -348,6 +347,60 @@ h1.rant-label {
     font-size: 34px;
     margin: 0;
 
+}
+
+.white-text {
+    color: whitesmoke;
+}
+
+.rant-form-submit-button{
+    background-color: green;
+    color: white;
+    border: thin solid gray;
+    border-radius: 3px;
+    font-weight: 300;
+    font-size: 18px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+
+    width: 100%
+
+}
+.rant-form-field{
+    width: 100%;
+    margin-bottom: 10px;
+}
+.rant-form-area{
+    width: 100%;
+    height: 200px;
+    margin-bottom: 10px;
+}
+
+.a-rant-flex-container{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-content: stretch;
+    align-items: stretch;
+
+    margin-left: 5px;
+    margin-bottom: 20px;
+
+}
+.font-10pt {
+    font-size: 10pt;
+}
+.a-rant-flex-left{
+    width:20%;
+    border: thin solid gray;
+
+}
+.a-rant-flex-right{
+    width:80%;
+    border: thin solid gray;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 
