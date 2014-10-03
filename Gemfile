@@ -47,3 +47,6 @@ group :development, :test do
 end
 
 gem "autoprefixer-rails"
+
+
+gem 'rails_12factor', group: :production #for heroku
