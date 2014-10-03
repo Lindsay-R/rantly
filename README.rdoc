@@ -1,4 +1,4 @@
 == README
 
 heroku link:
-http://lit-hollows-4870.herokuapp.com/
+http://rantoly.herokuapp.com/
