@@ -190,6 +190,9 @@ h1{
             .menu-icon {
                 display: block;
             }
+            .border-right-green{
+                border-right: none;
+            }
 
             nav ul, nav:active ul {
                 display: none;
