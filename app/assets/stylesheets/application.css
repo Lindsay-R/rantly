@@ -467,8 +467,9 @@ h1.rant-label {
     color: black;
 }
 .user-link a:hover{
-    text-decoration: underline;
-    background-color: whitesmoke;
+    color: lightgreen;
+    font-weight: 700;
+    font-size: 11pt;
 }
 
 .rant-link a{
@@ -476,7 +477,6 @@ h1.rant-label {
     color: black;
 }
 .rant-link a:hover{
-    /*color: lightgreen;*/
     background-color: whitesmoke;
 }
 

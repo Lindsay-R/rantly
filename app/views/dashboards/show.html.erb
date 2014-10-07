@@ -33,7 +33,7 @@
   <% @users.each do |user| %>
     <div>
         <% user.rants.each do |rant| %>
-        <div><p class="font-10pt"><span class="user-link"><%= link_to "#{user.username}", user_rants_path(rant.user_id)%></span> | <span class="rant-link"><%= link_to "#{rant.title.upcase} - #{rant.verbage}", user_rant_path(rant.user_id, rant.id), class: "rant-link"%></span></p></div>
+        <div><p class="font-10pt"><span class="user-link"><%= link_to "#{user.username}", user_rants_path(rant.user_id)%></span> &nbsp;|&nbsp; <span class="rant-link"><%= link_to "#{rant.title.upcase} - #{rant.verbage}", user_rant_path(rant.user_id, rant.id), class: "rant-link"%></span></p></div>
         <% end %>
     </div>
   <% end %>
@@ -42,7 +42,7 @@
   <h1 class="text-center rant-label"><%= current_user.username.capitalize %>'s Rants</h1>
 
   <% @user.rants.each do |rant| %>
-    <div><p class="font-10pt, rant-link"><%= link_to "#{rant.title.upcase} - #{rant.verbage}", user_rant_path(rant.user_id, rant.id) %></p></div>
+    <div><p class="rant-link"><%= link_to "#{rant.title.upcase} - #{rant.verbage}", user_rant_path(rant.user_id, rant.id) %></p></div>
         <%= button_to('Delete', [@user, rant], method: :delete) %>
   <% end %>
 
