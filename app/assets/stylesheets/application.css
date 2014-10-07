@@ -34,21 +34,18 @@ h1{
 
 
 
+
+
 /*-------- application ---------*/
 
 .app-flex-container {
     display:flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    /*justify-content: flex-start;*/
-    /*align-content: flex-start;*/
-    /*align-items: baseline;*/
-
     background-color: #393B39;
 }
 
 .app-flex1 {
-    /*flex: 1 0 150px;*/
     border-right: thin solid green;
     height: 60px;
     width: 155px;
@@ -63,6 +60,7 @@ h1{
     text-align:right;
     padding-top: 16px;
 }
+
 .app-flex3 {
     flex: 0 0 140px;
     height: 60px;
@@ -95,13 +93,16 @@ h1{
     margin-left: 40px;
 }
 
+.logo-link a:hover{
+    text-shadow: 1px 1px 10px black;
+}
+
 #highlight {
     color: lightgreen;
     text-decoration: none;
 }
 
 .dash-links a:link{
-
     color: lightgray;
     text-decoration: none;
 }
@@ -110,8 +111,9 @@ h1{
     text-decoration: none;
 }
 .dash-links a:hover{
-    color: white;
+    color: whitesmoke;
     text-decoration: none;
+    text-shadow: 1px 1px 2px gray;
 }
 
 .green {
@@ -129,15 +131,17 @@ h1{
     padding: 6px 40px 6px 40px;
 }
 
+.logout-button a:hover{
+    box-shadow: 0px 0px 10px black;
+}
+
 .app-flex4 {
-    flex: 3 0 400px;
+    flex: 3 0 20px;
     margin-left: 15px;
     margin-right: 15px;
     height: 60px;
     width: 400px;
-    padding-top: 16px;
     text-align: center;
-    /*border: thin solid black;*/
 }
 
 .app-flex5 {
@@ -145,8 +149,63 @@ h1{
     height: 60px;
     width: 180px;
     padding-top: 16px;
-    /*border: thin solid black;*/
 }
+
+
+
+    /*------Nav Media Query-----*/
+        .menu-icon{
+            display: none;
+            height: 30px;
+            width: 30px;
+            margin-top: 10px;
+        }
+
+        .list-menu{
+            width: 100%;
+            float: left;
+            padding-left: 15%;
+        }
+
+        .list-menu ul {
+            list-style: none;
+        }
+
+        .list-menu li {
+            /*border: 1px solid #4C9CF1;*/
+            width: auto;
+            display: inline-block;
+            float: left;
+            padding-right: 15px;
+        }
+
+        @media only screen and (max-width : 850px) {
+
+            .menu-icon {
+                display: block;
+            }
+
+            nav ul, nav:active ul {
+                display: none;
+                position: absolute;
+                padding: 2%;
+                background: #fff;
+                border: 4px solid #444;
+                left: 160px;
+                top: 1%;
+                width: 120px;
+                border-radius: 4px 0 4px 4px;
+            }
+
+            nav li {
+                text-align: left;
+            }
+
+            nav:hover ul {
+                display: block;
+            }
+}
+
 /*-------- end application ---------*/
 
 

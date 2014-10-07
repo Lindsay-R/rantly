@@ -29,12 +29,27 @@
 
       <div class="app-flex4 dash-links">
 
-        <%= link_to "#{current_user.username}'s Dashboard" , dashboard_path(current_user) %> <span class="green">|</span>
-        <%= link_to "Following" , root_path %> <span class="green">|</span>
-        <%= link_to "Favorites" , root_path %> <span class="green">|</span>
-        <%= link_to "Search" , root_path %>
+
+
+
+        <nav>
+
+          <a href="#"><img class="menu-icon" src="/assets/hamburger.png"></a>
+          <div class="list-menu">
+            <ul>
+              <li><%= link_to "#{current_user.username}'s Dashboard" , dashboard_path(current_user) %></li>
+              <li><%= link_to "Following" , root_path %></li>
+              <li><%= link_to "Favorites" , root_path %></li>
+              <li><%= link_to "Search" , root_path %></li>
+            </ul>
+
+          </div>
+        </nav>
 
       </div>
+
+
+
 
       <div class="app-flex5">
         <div class="logout-button">
