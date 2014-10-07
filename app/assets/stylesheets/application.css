@@ -462,6 +462,23 @@ h1.rant-label {
 .font-10pt {
     font-size: 10pt;
 }
+.user-link a{
+    text-decoration: none;
+    color: black;
+}
+.user-link a:hover{
+    text-decoration: underline;
+    background-color: whitesmoke;
+}
+
+.rant-link a{
+    text-decoration: none;
+    color: black;
+}
+.rant-link a:hover{
+    /*color: lightgreen;*/
+    background-color: whitesmoke;
+}
 
 /*.a-rant-flex-container{*/
     /*display:flex;*/
