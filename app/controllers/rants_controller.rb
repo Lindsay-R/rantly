@@ -8,7 +8,7 @@ class RantsController < ApplicationController
    @new_rant = Rant.new
    # end form stuff
 
-   @user = User.find(params[:id])
+   @user = User.find(params[:user_id])
    @rants = @user.rants.all
 
  end
