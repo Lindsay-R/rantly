@@ -6,10 +6,10 @@ class RegistrationsController < ApplicationController
     @user = User.new
   end
 
-  def show
-    @user = current_user
-    @rants = @user.rants.all
-  end
+  # def show
+  #   @user = current_user
+  #   @rants = @user.rants.all
+  # end
 
   def create
     @user = User.new(
@@ -29,9 +29,6 @@ class RegistrationsController < ApplicationController
     end
   end
 
-  def edit
-    @user = User.find(params[:id])
-  end
 
   def update
     @user = User.find(params[:id])
