@@ -1,7 +1,7 @@
 <div class="dash-flex-container">
 
 <div class="dash-flex1">
-  <h2 class="text-center white-text"><%= current_user.first_name %> <%= current_user.last_name %></h2>
+  <h2 class="text-center white-text"><%= link_to "#{current_user.first_name.capitalize} #{current_user.last_name.capitalize}", registration_path(current_user)%> </h2>
   <hr>
 
   <%= form_for [@user, @rant] do |f| %>

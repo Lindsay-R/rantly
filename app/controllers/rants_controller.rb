@@ -8,13 +8,13 @@ class RantsController < ApplicationController
    @new_rant = Rant.new
    # end form stuff
 
-   @user = User.find(params[:user_id])
+   @user = User.find(params[:id])
    @rants = @user.rants.all
 
  end
  def show
-   @user = current_user
-   @rant = @user.rants.find(params[:id])
+   @user = User.find(params[:id])
+   @rant = @user.rant.find(params[:id]) #somethings worng with it
    @new_rant = Rant.new
  end
 

@@ -1,0 +1,16 @@
+<div class="dash-flex2">
+  <h2 class="text-center " ><%= @user.first_name %> <%= @user.last_name %> <%= link_to "Edit Profile", edit_registration_path%></h2>
+
+  <hr>
+  <h3><%= @user.rant_rate.capitalize %> Ranter</h3>
+  Bio: <%= @user.bio %>
+
+
+  <% @rants.each do |rant| %>
+
+    <div><p class="font-10pt" > <%= link_to "#{rant.title.upcase}", user_rant_path(rant.user_id, rant.id) %> - <%= rant.verbage %></p></div>
+
+  <% end %>
+
+
+</div>
