@@ -121,6 +121,11 @@ h1{
     font-size: 16px;
 }
 
+.border-right-green{
+    padding-right: 15px;
+    border-right: thin solid lightgreen;
+}
+
 .logout-button a{
     color: white;
     text-decoration: none;
@@ -382,38 +387,39 @@ p.no-margin{
 
 
 /*-------- Dashboard ---------*/
-@media (min-width:640px){
 
-    .dash-flex-container {
-        display:flex;
-    }
-    .dash-flex1 {
-        flex: 1 0 250px;
-    }
-    .dash-flex2 {
-        flex: 5 0 300px;
-    }
-}
+        /*------Dashboard Media Query-----*/
+        @media (min-width:640px){
 
-.dash-flex-container {
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-content: stretch;
-    align-items: stretch;
+            .dash-flex-container {
+                display:flex;
+            }
+            .dash-flex1 {
+                flex: 1 0 250px;
+            }
+            .dash-flex2 {
+                flex: 5 0 300px;
+            }
+        }
 
-}
+        .dash-flex-container {
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-content: stretch;
+            align-items: stretch;
+        }
 
-.dash-flex1 {
-    padding: 0px 20px 0px 20px;
-    margin-bottom: 5%;
-}
+        .dash-flex1 {
+            padding: 0px 20px 0px 20px;
+            margin-bottom: 5%;
+        }
 
-.dash-flex2 {
-    background-color: white;
-    padding: 0px 20px 0px 20px;
-    padding-top: 20px;
-}
+        .dash-flex2 {
+            background-color: white;
+            padding: 0px 20px 0px 20px;
+            padding-top: 20px;
+        }
 
 h1.rant-label {
     font-size: 34px;
@@ -425,7 +431,7 @@ h1.rant-label {
     color: whitesmoke;
 }
 
-.rant-form-submit-button{
+.rant-form-submit-button {
     background-color: green;
     color: white;
     border: thin solid gray;
@@ -438,6 +444,8 @@ h1.rant-label {
     width: 100%
 
 }
+
+
 .rant-form-field{
     width: 100%;
     margin-bottom: 10px;

@@ -37,9 +37,9 @@
           <a href="#"><img class="menu-icon" src="/assets/hamburger.png"></a>
           <div class="list-menu">
             <ul>
-              <li><%= link_to "#{current_user.username}'s Dashboard" , dashboard_path(current_user) %></li>
-              <li><%= link_to "Following" , root_path %></li>
-              <li><%= link_to "Favorites" , root_path %></li>
+              <li><div class="border-right-green"><%= link_to "#{current_user.username.upcase}" , dashboard_path(current_user) %></div></li>
+              <li><div class="border-right-green"><%= link_to "Following" , root_path %></div></li>
+              <li><div class="border-right-green"><%= link_to "Favorites" , root_path %></div></li>
               <li><%= link_to "Search" , root_path %></li>
             </ul>
 
