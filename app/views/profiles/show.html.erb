@@ -8,7 +8,7 @@
 
   <% @rants.each do |rant| %>
 
-    <div><p class="font-10pt" > <%= link_to "#{rant.title.upcase}", user_rant_path(rant.user_id, rant.id) %> - <%= rant.verbage %></p></div>
+    <div><p class="rant-link"><%= link_to "#{rant.title.upcase} - #{rant.verbage}", user_rant_path(rant.user_id, rant.id) %></p></div>
 
   <% end %>
 
