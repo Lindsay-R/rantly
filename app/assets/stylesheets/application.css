@@ -133,6 +133,7 @@ h1{
 
 .logout-button a:hover{
     box-shadow: 0px 0px 10px black;
+    background-color: forestgreen;
 }
 
 .app-flex4 {
@@ -381,8 +382,20 @@ p.no-margin{
 
 
 /*-------- Dashboard ---------*/
+@media (min-width:640px){
+
+    .dash-flex-container {
+        display:flex;
+    }
+    .dash-flex1 {
+        flex: 1 0 250px;
+    }
+    .dash-flex2 {
+        flex: 5 0 300px;
+    }
+}
+
 .dash-flex-container {
-    display:flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
@@ -390,18 +403,18 @@ p.no-margin{
     align-items: stretch;
 
 }
-.dash-flex1 {
-    /*flex: 0 0 300px;*/
-    width: 30%;
-    padding: 0px 20px 0px 20px;
 
+.dash-flex1 {
+    padding: 0px 20px 0px 20px;
+    margin-bottom: 5%;
 }
+
 .dash-flex2 {
-    /*flex: 0 0 300px;*/
-    width: 70%;
     background-color: white;
     padding: 0px 20px 0px 20px;
+    padding-top: 20px;
 }
+
 h1.rant-label {
     font-size: 34px;
     margin: 0;
