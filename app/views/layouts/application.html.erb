@@ -34,7 +34,7 @@
 
         <nav>
 
-          <a href="#"><img class="menu-icon" src="/assets/hamburger.png"></a>
+          <a href="#"><%= image_tag 'hamburger.png', :class => "menu-icon"%></a>
           <div class="list-menu">
             <ul>
               <li><div class="border-right-green"><%= link_to "#{current_user.username.upcase}" , dashboard_path(current_user) %></div></li>
