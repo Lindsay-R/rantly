@@ -1,30 +1,7 @@
 <div class="dash-flex-container">
 
   <div class="dash-flex1">
-    <h2 class="text-center white-text"><%= link_to "#{current_user.first_name.capitalize} #{current_user.last_name.capitalize}", profile_path(current_user) %> </h2>
-    <hr>
-
-    <%= form_for [@user, @rant] do |f| %>
-      <% if @rant.errors.any? %>
-        <ul>
-          <% @rant.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
-      <% end %>
-
-
-      <div class="white-text"><%= f.label :title, "A rant about:" %></div>
-      <%= f.text_field :title, :class => "rant-form-field" %>
-
-      <div class="white-text"><%= f.label :verbage, "Rant:" %></div>
-      <%= f.text_area :verbage, :class => "rant-form-area", placeholder: "Rant about something, or at someone..." %>
-
-
-      <div><%= f.submit :RANT, :class => "rant-form-submit-button" %></div>
-
-    <% end %>
-
+    <%= render 'rants/create_rant_form' %>
   </div>
 
   <div class="dash-flex2">

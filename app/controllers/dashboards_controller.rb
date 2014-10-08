@@ -4,6 +4,10 @@ class DashboardsController < ApplicationController
   end
 
   def show
+    # form stuff
+    @new_rant = Rant.new
+    # end form stuff
+
     @user = current_user
     @rant = Rant.new
     @rants = @user.rants

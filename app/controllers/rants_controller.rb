@@ -15,9 +15,9 @@ class RantsController < ApplicationController
   end
 
   def show
+    @new_rant = Rant.new
     @user = User.find(params[:user_id])
     @rant = @user.rants.find(params[:id])
-    @new_rant = Rant.new
   end
 
   def create
