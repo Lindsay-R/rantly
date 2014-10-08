@@ -3,7 +3,7 @@ class ProfilesController < ApplicationController
 
   def show
     @user = current_user
-    @rants = @user.rants.all
+    @rants = @user.rants
   end
 
   def edit

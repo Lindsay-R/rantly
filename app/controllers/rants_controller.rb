@@ -9,7 +9,7 @@ class RantsController < ApplicationController
    # end form stuff
 
    @user = User.find(params[:user_id])
-   @rants = @user.rants.all
+   @rants = @user.rants
 
  end
  def show
