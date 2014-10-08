@@ -22,11 +22,7 @@ class RantsController < ApplicationController
 
   def create
     @user = current_user
-    @rant = Rant.new(
-      title: params[:rant][:title],
-      verbage: params[:rant][:verbage],
-      user_id: current_user.id
-    )
+    @rant = Rant.new(rant_allowed_params)
     @rant.save
     redirect_to dashboard_path(current_user)
   end
@@ -36,6 +32,13 @@ class RantsController < ApplicationController
     @rant = @user.rants.find(params[:id])
     @rant.destroy
     redirect_to dashboard_path(current_user)
+  end
+
+
+  private
+
+  def rant_allowed_params
+    params.require(:rant).permit(:title, :verbage).merge(:user_id => current_user.id)
   end
 
 end

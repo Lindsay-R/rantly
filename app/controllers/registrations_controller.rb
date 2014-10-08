@@ -12,14 +12,9 @@ class RegistrationsController < ApplicationController
   # end
 
   def create
-    @user = User.new(
-      username: params[:user][:username],
-      first_name: params[:user][:first_name],
-      last_name: params[:user][:last_name],
-      bio: params[:user][:bio],
-      rant_rate: params[:user][:rant_rate],
-      password: params[:user][:password]
-    )
+
+    @user = User.new(user_allowed_params)
+
 
     if @user.save
       session[:user_id] = @user.id
@@ -32,19 +27,20 @@ class RegistrationsController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user.update(
-      username: params[:user][:username],
-      first_name: params[:user][:first_name],
-      last_name: params[:user][:last_name],
-      bio: params[:user][:bio],
-      rant_rate: params[:user][:rant_rate],
-      password: params[:user][:password]
-    )
+    if @user.update(user_allowed_params)
       redirect_to dashboard_path(current_user)
       flash[:notice]= "Profile was updated successfully!"
     else
       render :edit
     end
+  end
+
+
+  private
+
+  def user_allowed_params
+    params.require(:user).permit(:username, :first_name, :last_name, :bio, :rant_rate, :password)
+    # .merge(:user_id => current_user.id)
   end
 
 
