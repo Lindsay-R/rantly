@@ -32,23 +32,23 @@
     <div class="form-padding">
 
       <div><%= f.label :bio %></div>
-      <%= f.text_area :bio, :class => "join-form-area"%>
+      <%= f.text_area :bio, :class => "join-form-area" %>
 
 
       <div>
         <%= f.label :rant_rate, "How often do you rant?" %>
 
         <div class="radio-button-flex-container">
-          <div class="radio-button-flex"><%= f.radio_button :rant_rate,'daily' %> <%= f.label :rant_rate_daily, "Daily" %></div>
-          <div class="radio-button-flex"><%= f.radio_button :rant_rate,'weekly' %> <%= f.label :rant_rate_monthly, "Weekly" %></div>
-          <div class="radio-button-flex"><%= f.radio_button :rant_rate,'monthly' %> <%= f.label :rant_rate_monthly, "Monthly" %></div>
+          <div class="radio-button-flex"><%= f.radio_button :rant_rate, 'daily' %> <%= f.label :rant_rate_daily, "Daily" %></div>
+          <div class="radio-button-flex"><%= f.radio_button :rant_rate, 'weekly' %> <%= f.label :rant_rate_monthly, "Weekly" %></div>
+          <div class="radio-button-flex"><%= f.radio_button :rant_rate, 'monthly' %> <%= f.label :rant_rate_monthly, "Monthly" %></div>
         </div>
 
       </div>
 
 
     </div>
-    <div class="form-submit"> <%= f.submit "Update Profile", :class => "join-form-submit-button"  %></div>
+    <div class="form-submit"> <%= f.submit "Update Profile", :class => "join-form-submit-button" %></div>
 
   <% end %>
 </div>

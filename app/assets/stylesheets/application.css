@@ -480,31 +480,4 @@ h1.rant-label {
     background-color: whitesmoke;
 }
 
-/*.a-rant-flex-container{*/
-    /*display:flex;*/
-    /*flex-direction: row;*/
-    /*flex-wrap: nowrap;*/
-    /*justify-content: space-between;*/
-    /*align-content: stretch;*/
-    /*align-items: stretch;*/
-
-    /*margin-left: 5px;*/
-    /*margin-bottom: 20px;*/
-
-/*}*/
-
-/*.a-rant-flex-left{*/
-    /*width:20%;*/
-    /*border: thin solid gray;*/
-
-/*}*/
-/*.a-rant-flex-right{*/
-    /*width:80%;*/
-    /*border: thin solid gray;*/
-    /*padding-left: 15px;*/
-    /*padding-right: 15px;*/
-/*}*/
-
-
-
 /*-------- end Dashboard ---------*/

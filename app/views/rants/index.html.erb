@@ -29,7 +29,7 @@
 
 
   <div class="dash-flex2">
-    <h2 class="text-center " ><%= @user.first_name %> <%= @user.last_name %></h2>
+    <h2 class="text-center "><%= @user.first_name %> <%= @user.last_name %></h2>
 
     <hr>
     <h3><%= @user.rant_rate.capitalize %> Ranter</h3>
@@ -38,14 +38,14 @@
 
     <% @rants.each do |rant| %>
 
-      <div><p class="rant-link"><%= link_to "#{rant.title.upcase} - #{rant.verbage}", user_rant_path(rant.user_id, rant.id) %></p></div>
+      <div>
+        <p class="rant-link"><%= link_to "#{rant.title.upcase} - #{rant.verbage}", user_rant_path(rant.user_id, rant.id) %></p>
+      </div>
 
     <% end %>
 
 
   </div>
-
-
 
 
 </div>

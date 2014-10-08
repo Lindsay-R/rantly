@@ -3,16 +3,18 @@
 <head>
   <title>Rant.ly</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- this makes a design responsive-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- this makes a design responsive-->
 
-  <link href='http://fonts.googleapis.com/css?family=Nunito:700,300,400' rel='stylesheet' type='text/css'> <!-- use a google font -->
+  <link href='http://fonts.googleapis.com/css?family=Nunito:700,300,400' rel='stylesheet' type='text/css'>
+  <!-- use a google font -->
 
   <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 
-  <%= stylesheet_link_tag  "http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css" %>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag "http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css" %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -21,68 +23,69 @@
 
 
   <div>
-  <% if current_user %>
-    <section class="app-flex-container">
-      <div class="app-flex1 logo-link">
-        <%= link_to "Rant.ly", dashboard_path(current_user)  %>
-      </div>
-
-      <div class="app-flex4 dash-links">
-
-
-
-
-        <nav>
-
-          <a href="#"><%= image_tag 'hamburger.png', :class => "menu-icon"%></a>
-          <div class="list-menu">
-            <ul>
-              <li><div class="border-right-green"><%= link_to "#{current_user.username.upcase}" , dashboard_path(current_user) %></div></li>
-              <li><div class="border-right-green"><%= link_to "Following" , root_path %></div></li>
-              <li><div class="border-right-green"><%= link_to "Favorites" , root_path %></div></li>
-              <li><%= link_to "Search" , root_path %></li>
-            </ul>
-
-          </div>
-        </nav>
-
-      </div>
-
-
-
-
-      <div class="app-flex5">
-        <div class="logout-button">
-          <%= link_to "LOGOUT", signout_path %>
+    <% if current_user %>
+      <section class="app-flex-container">
+        <div class="app-flex1 logo-link">
+          <%= link_to "Rant.ly", dashboard_path(current_user) %>
         </div>
-      </div>
-    </section>
+
+        <div class="app-flex4 dash-links">
 
 
+          <nav>
 
-  <% else %>
+            <a href="#"><%= image_tag 'hamburger.png', :class => "menu-icon" %></a>
+
+            <div class="list-menu">
+              <ul>
+                <li>
+                  <div class="border-right-green"><%= link_to "#{current_user.username.upcase}", dashboard_path(current_user) %></div>
+                </li>
+                <li>
+                  <div class="border-right-green"><%= link_to "Following", root_path %></div>
+                </li>
+                <li>
+                  <div class="border-right-green"><%= link_to "Favorites", root_path %></div>
+                </li>
+                <li><%= link_to "Search", root_path %></li>
+              </ul>
+
+            </div>
+          </nav>
+
+        </div>
 
 
-  <section class="app-flex-container">
-    <div class="app-flex1 logo-link">
-      <%= link_to "Rant.ly", root_path %>
-    </div>
-
-    <div class="app-flex2 login-link">
-      <%= link_to "Login", signin_path %>
-    </div>
-
-    <div class="app-flex3">
-      <div class="join-button">
-      <%= link_to "JOIN", new_registration_path %>
-      </div>
-    </div>
-  </section>
+        <div class="app-flex5">
+          <div class="logout-button">
+            <%= link_to "LOGOUT", signout_path %>
+          </div>
+        </div>
+      </section>
 
 
-  <% end %>
+    <% else %>
+
+
+      <section class="app-flex-container">
+        <div class="app-flex1 logo-link">
+          <%= link_to "Rant.ly", root_path %>
+        </div>
+
+        <div class="app-flex2 login-link">
+          <%= link_to "Login", signin_path %>
+        </div>
+
+        <div class="app-flex3">
+          <div class="join-button">
+            <%= link_to "JOIN", new_registration_path %>
+          </div>
+        </div>
+      </section>
+
+
+    <% end %>
   </div>
-
 
 
 </header>

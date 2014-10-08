@@ -2,6 +2,7 @@ class DashboardsController < ApplicationController
   def index
 
   end
+
   def show
     @user = current_user
     @rant = Rant.new
@@ -9,9 +10,11 @@ class DashboardsController < ApplicationController
     @users = User.where.not(:id => current_user.id)
 
   end
+
   def new
 
   end
+
   def create
 
 

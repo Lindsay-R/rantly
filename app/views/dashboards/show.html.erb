@@ -1,52 +1,57 @@
 <div class="dash-flex-container">
 
-<div class="dash-flex1">
-  <h2 class="text-center white-text"><%= link_to "#{current_user.first_name.capitalize} #{current_user.last_name.capitalize}", profile_path(current_user)%> </h2>
-  <hr>
+  <div class="dash-flex1">
+    <h2 class="text-center white-text"><%= link_to "#{current_user.first_name.capitalize} #{current_user.last_name.capitalize}", profile_path(current_user) %> </h2>
+    <hr>
 
-  <%= form_for [@user, @rant] do |f| %>
-    <% if @rant.errors.any? %>
-      <ul>
-        <% @rant.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+    <%= form_for [@user, @rant] do |f| %>
+      <% if @rant.errors.any? %>
+        <ul>
+          <% @rant.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      <% end %>
+
+
+      <div class="white-text"><%= f.label :title, "A rant about:" %></div>
+      <%= f.text_field :title, :class => "rant-form-field" %>
+
+      <div class="white-text"><%= f.label :verbage, "Rant:" %></div>
+      <%= f.text_area :verbage, :class => "rant-form-area", placeholder: "Rant about something, or at someone..." %>
+
+
+      <div><%= f.submit :RANT, :class => "rant-form-submit-button" %></div>
+
     <% end %>
 
+  </div>
 
-    <div class="white-text"><%= f.label :title, "A rant about:" %></div>
-    <%= f.text_field :title, :class => "rant-form-field" %>
+  <div class="dash-flex2">
+    <h1 class="text-center rant-label">Latest Rants</h1>
 
-    <div class="white-text"><%= f.label :verbage, "Rant:" %></div>
-    <%= f.text_area :verbage, :class => "rant-form-area", placeholder: "Rant about something, or at someone..." %>
-
-
-    <div><%= f.submit :RANT, :class => "rant-form-submit-button" %></div>
-
-  <% end %>
-
-</div>
-
-<div class="dash-flex2">
-  <h1 class="text-center rant-label">Latest Rants</h1>
-
-  <% @users.each do |user| %>
-    <div>
+    <% @users.each do |user| %>
+      <div>
         <% user.rants.each do |rant| %>
-        <div><p class="font-10pt"><span class="user-link"><%= link_to "#{user.username}", user_rants_path(rant.user_id)%></span> &nbsp;|&nbsp; <span class="rant-link"><%= link_to "#{rant.title.upcase} - #{rant.verbage}", user_rant_path(rant.user_id, rant.id), class: "rant-link"%></span></p></div>
+          <div><p class="font-10pt">
+            <span class="user-link"><%= link_to "#{user.username}", user_rants_path(rant.user_id) %></span> &nbsp;|&nbsp;
+            <span class="rant-link"><%= link_to "#{rant.title.upcase} - #{rant.verbage}", user_rant_path(rant.user_id, rant.id), class: "rant-link" %></span>
+          </p></div>
         <% end %>
-    </div>
-  <% end %>
+      </div>
+    <% end %>
 
-  <hr>
-  <h1 class="text-center rant-label"><%= current_user.username.capitalize %>'s Rants</h1>
+    <hr>
+    <h1 class="text-center rant-label"><%= current_user.username.capitalize %>'s Rants</h1>
 
-  <% @user.rants.each do |rant| %>
-    <div><p class="rant-link"><%= link_to "#{rant.title.upcase} - #{rant.verbage}", user_rant_path(rant.user_id, rant.id) %></p></div>
-        <%= button_to('Delete', [@user, rant], method: :delete) %>
-  <% end %>
+    <% @user.rants.each do |rant| %>
+      <div>
+        <p class="rant-link"><%= link_to "#{rant.title.upcase} - #{rant.verbage}", user_rant_path(rant.user_id, rant.id) %></p>
+      </div>
+      <%= button_to('Delete', [@user, rant], method: :delete) %>
+    <% end %>
 
-</div>
+  </div>
 
 
 </div>

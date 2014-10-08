@@ -1,22 +1,24 @@
 class RantsController < ApplicationController
- def new
+  def new
 
- end
- def index
-   # form stuff
-   @user = current_user
-   @new_rant = Rant.new
-   # end form stuff
+  end
 
-   @user = User.find(params[:user_id])
-   @rants = @user.rants
+  def index
+    # form stuff
+    @user = current_user
+    @new_rant = Rant.new
+    # end form stuff
 
- end
- def show
-   @user = User.find(params[:user_id])
-   @rant = @user.rants.find(params[:id])
-   @new_rant = Rant.new
- end
+    @user = User.find(params[:user_id])
+    @rants = @user.rants
+
+  end
+
+  def show
+    @user = User.find(params[:user_id])
+    @rant = @user.rants.find(params[:id])
+    @new_rant = Rant.new
+  end
 
   def create
     @user = current_user
@@ -29,11 +31,11 @@ class RantsController < ApplicationController
     redirect_to dashboard_path(current_user)
   end
 
- def destroy
-   @user = User.find(params[:user_id])
-   @rant = @user.rants.find(params[:id])
-   @rant.destroy
-   redirect_to dashboard_path(current_user)
- end
+  def destroy
+    @user = User.find(params[:user_id])
+    @rant = @user.rants.find(params[:id])
+    @rant.destroy
+    redirect_to dashboard_path(current_user)
+  end
 
 end

@@ -1,29 +1,27 @@
-
-
 <div class="form-container">
   <div class="form-padding">
-  <h1>Login</h1>
-  <%= form_for @user, url: sessions_path do |f| %>
-    <% if @user.errors.any? %>
-      <ul>
-        <% @user.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    <% end %>
+    <h1>Login</h1>
+    <%= form_for @user, url: sessions_path do |f| %>
+      <% if @user.errors.any? %>
+        <ul>
+          <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      <% end %>
 
 
 
       <div><%= f.label :username %></div>
-        <%= f.text_field :username, :class => "login-form-field"  %>
+      <%= f.text_field :username, :class => "login-form-field" %>
 
 
       <div><%= f.label :password %></div>
-        <%= f.password_field :password, :class => "login-form-field" %>
+      <%= f.password_field :password, :class => "login-form-field" %>
 
       </div>
 
-      <div class="form-submit" ><%= f.submit "LOGIN", :class => "login-form-submit-button" %></div>
+      <div class="form-submit"><%= f.submit "LOGIN", :class => "login-form-submit-button" %></div>
 
-  <% end %>
-</div>
+    <% end %>
+    </div>
