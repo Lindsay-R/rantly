@@ -7,7 +7,7 @@ class DashboardsController < ApplicationController
     @user = current_user
     @rant = Rant.new
     @rants = @user.rants
-    @users = User.where.not(:id => current_user.id)
+    @users = (User.where.not(:id => current_user.id)).order(created_at: :desc)
 
   end
 
