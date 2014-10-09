@@ -452,11 +452,8 @@ h1.rant-label {
     font-size: 18px;
     padding-top: 6px;
     padding-bottom: 6px;
-
     width: 100%
-
 }
-
 
 .rant-form-field{
     width: 100%;
@@ -490,3 +487,23 @@ h1.rant-label {
 }
 
 /*-------- end Dashboard ---------*/
+
+.rant-show-flex-container {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    background-color: whitesmoke;
+    align-items: baseline;
+}
+.rant-show-username {
+    margin-left: 10px;
+    padding-left: 10px;
+    border-left: thin solid gray;
+}
+
+
+/*-------- Rant Show ---------*/
+
+
+
+/*-------- end Rant Show ---------*/

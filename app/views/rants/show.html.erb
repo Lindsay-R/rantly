@@ -6,12 +6,15 @@
 
   <div class="dash-flex2">
 
-    <h1 class="text-center rant-label"><%= @rant.title.upcase %></h1> <%= link_to "Favorite", root_path %>
+    <div class="rant-show-flex-container">
+      <div><h1 class="text-center rant-label"><%= @rant.title.upcase %></h1></div>
+      <div class="rant-show-username">author: <span class="user-link"><%= link_to "#{@rant.user.username.capitalize}", user_rants_path(@rant.user_id) %></span></div>
+    </div>
 
+    <%= link_to "Favorite", root_path %>
     <hr>
 
     <p><%= @rant.verbage %></p>
-
 
   </div>
 
