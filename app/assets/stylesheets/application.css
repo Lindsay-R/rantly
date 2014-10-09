@@ -78,12 +78,21 @@ h1{
     padding: 6px 40px 6px 40px;
 }
 
+.join-button a:hover{
+    box-shadow: 0px 0px 10px black;
+    background-color: forestgreen;
+}
+
 .login-link a{
     color: lightgray;
     font-size: 14px;
     text-decoration: underline;
 }
 
+.login-link a:hover{
+    color: whitesmoke;
+    text-shadow: 1px 1px 2px black;
+}
 
 .logo-link a{
     color: lightgray;
@@ -113,7 +122,7 @@ h1{
 .dash-links a:hover{
     color: whitesmoke;
     text-decoration: none;
-    text-shadow: 1px 1px 2px gray;
+    text-shadow: 1px 1px 2px black;
 }
 
 .green {

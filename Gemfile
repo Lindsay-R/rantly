@@ -41,6 +41,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'launchy' #save and open page
 
 group :development, :test do
+  gem 'pry-byebug'
   gem "rspec-rails", "3.0.1"
   gem 'rspec-collection_matchers', '~> 1.0.0'
   gem "capybara", "2.3.0"
