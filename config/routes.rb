@@ -1,14 +1,12 @@
 Rails.application.routes.draw do
   root "home#show"
 
-
   resources :registrations, only: [:new, :create, :update]
   resources :sessions
   resource :home, only: [:show]
   resources :dashboards
-
   resources :profiles, only: [:show, :edit]
-
+  resources :searches, only: [:index]
 
 
   resources :users do
