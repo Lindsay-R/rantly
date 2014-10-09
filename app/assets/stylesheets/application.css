@@ -16,6 +16,12 @@
 
 
 
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both; }
+
+
 * {
     font-family: 'Nunito', sans-serif;
     box-sizing: border-box;
@@ -319,9 +325,7 @@ p.no-margin{
     font-size: 18px;
     padding-top: 6px;
     padding-bottom: 6px;
-
     width: 100%
-
 }
 
 .login-form-field{
@@ -344,21 +348,17 @@ p.no-margin{
     justify-content: space-between;
     align-content: flex-start;
     align-items: flex-start;
-
     margin-left: 15px;
 }
 
 .join-flex{
     flex: 1 0 200px;
-
 }
-
 
 .join-form-field{
     width: 95%;
     margin-bottom: 5px;
 }
-
 
 .radio-button-flex-container{
     display:flex;
@@ -367,9 +367,9 @@ p.no-margin{
     justify-content: space-around;
     align-content: flex-start;
     align-items: flex-start;
-
     padding-bottom: 15px;
 }
+
 .radio-button-flex{
     flex: 0 0 90px;
     padding-bottom: 5px;
@@ -388,9 +388,7 @@ p.no-margin{
     font-size: 18px;
     padding-top: 6px;
     padding-bottom: 6px;
-
     width: 100%
-
 }
 
 /*-------- end Join ---------*/
@@ -474,8 +472,6 @@ h1.rant-label {
 }
 .user-link a:hover{
     color: lightgreen;
-    font-weight: 700;
-    font-size: 11pt;
 }
 
 .rant-link a{
@@ -488,22 +484,42 @@ h1.rant-label {
 
 /*-------- end Dashboard ---------*/
 
+
+
+
+
+/*-------- Rant Show ---------*/
+
 .rant-show-flex-container {
     display:flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    background-color: whitesmoke;
     align-items: baseline;
+    width: 75%;
+    float: left;
 }
+
 .rant-show-username {
     margin-left: 10px;
     padding-left: 10px;
     border-left: thin solid gray;
 }
 
+.fav-follow-flex-container {
+    width:25%;
+    display:flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    text-align: right;
+}
 
-/*-------- Rant Show ---------*/
+.fav-follow-link a{
+    color: black;
+}
 
+.fav-follow-link a:hover{
+    color: lightgreen;
+}
 
 
 /*-------- end Rant Show ---------*/
