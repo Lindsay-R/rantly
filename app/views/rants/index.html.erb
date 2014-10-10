@@ -15,7 +15,14 @@
 
     <div><h1 class="rant-label"><%= @user.first_name %> <%= @user.last_name %></h1></div>
     </div>
-    <div class="fav-follow-flex-container"><span class="fav-follow-link"><%= link_to "Favorite", favorites_path%></span><span class="fav-follow-link"><%= link_to "Follow", follows_path%></span></div>
+    <div class="fav-follow-flex-container">
+      <!--calls users_helper with follow_button method-->
+      <% if current_user.can_follow?(@user) %>
+        <%= follow_button @user %>
+      <% end %>
+
+      <span class="fav-follow-link"><%= link_to "Favorite", favorites_path%></span>
+    </div>
 
     <div class="clearfix"></div>
     <hr>

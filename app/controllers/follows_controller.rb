@@ -1,7 +1,5 @@
 class FollowsController < ApplicationController
-  def index
-
-
+  def show
 
   end
 end
