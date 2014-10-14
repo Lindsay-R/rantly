@@ -46,7 +46,7 @@
                   <div class="border-right-green"><%= link_to "Following", followings_path %></div>
                 </li>
                 <li>
-                  <div class="border-right-green"><%= link_to "Favorites", favorites_path %></div>
+                  <div class="border-right-green"><%= link_to "Favorites", favorites_path(current_user) %></div>
                 </li>
                 <li><%= link_to "Search", searches_path %></li>
               </ul>
