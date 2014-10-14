@@ -19,7 +19,12 @@
       <% if current_user.can_follow?(@user) %>
         <%= follow_button @user %>
       <% end %>
-      <span class="fav-follow-link"><%= link_to "Favorite", favorites_path%></span>
+
+      <% if @favorites.find_by(:rant_id => @rant.id, :user_id => current_user.id) == nil %>
+        <%= button_to 'Favorite', user_rant_favorite_path(current_user.id, @rant.id) %>
+      <% else %>
+        <%= button_to 'Unfavorite', user_rant_favorite_path(current_user.id, @rant.id), method: :delete %>
+      <% end %>
     </div>
 
     <div class="clearfix"></div>

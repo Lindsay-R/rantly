@@ -14,7 +14,11 @@ Rails.application.routes.draw do
   resources :users do
     post 'follow' => 'following_relationships#create'
     delete 'follow' => 'following_relationships#destroy'
-    resources :rants
+
+      resources :rants do
+      post 'favorite' => 'favorites#create'
+      delete 'favorite' => 'favorites#destroy'
+      end
   end
 
 

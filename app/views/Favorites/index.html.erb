@@ -1,1 +1,48 @@
-<h1>Favorites Page</h1>
+<div class="dash-flex-container">
+
+  <div class="dash-flex1">
+    <%= render 'rants/create_rant_form' %>
+  </div>
+
+
+  <div class="dash-flex2">
+
+
+
+    <h1 class="text-center rant-label">Favorites</h1>
+
+    <hr>
+
+    <% @current_user_favorites.each do |favorite|  %>
+
+
+
+        <div><p class="font-10pt">
+          <span class="user-link"><%= link_to "#{favorite.rant.user.username}", user_rants_path(favorite.rant.user_id) %></span> &nbsp;|&nbsp;
+          <span class="rant-link"><%= link_to "#{favorite.rant.title.upcase} - #{favorite.rant.verbage}", user_rant_path(favorite.rant.user_id, favorite.rant.id), class: "rant-link" %></span>
+        </p></div>
+
+
+      <!--calls users_helper with follow_button method-->
+      <% if current_user.can_follow?(favorite.rant.user) %>
+        <%= follow_button favorite.rant.user %>
+      <% end %>
+
+
+      <% if @favorites.find_by(:rant_id => favorite.rant.id, :user_id => current_user.id) == nil %>
+        <%= button_to 'Favorite', user_rant_favorite_path(current_user.id, favorite.rant.id) %>
+      <% else %>
+        <%= button_to 'Unfavorite', user_rant_favorite_path(current_user.id, favorite.rant.id), method: :delete %>
+      <% end %>
+      <div class="bottom-margin"></div>
+
+
+
+    <% end %>
+
+
+
+  </div>
+
+
+</div>

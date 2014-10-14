@@ -20,6 +20,7 @@ class RantsController < ApplicationController
     @new_rant = Rant.new
     @user = User.find(params[:user_id])
     @rant = @user.rants.find(params[:id])
+    @favorites = Favorite.all
   end
 
   def create

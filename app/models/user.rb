@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
 
   has_many :rants
 
+  has_many :favorites, through: :rants
 
 
   # reference upcase vid...
@@ -44,5 +45,9 @@ class User < ActiveRecord::Base
   def can_follow? user
     self != user
   end
+
+
+
+
 
 end
