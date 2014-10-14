@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
 
   has_many :rants
 
+
+
   # reference upcase vid...
   # needed a join table to connect users following and users being followed
   # reflexive association

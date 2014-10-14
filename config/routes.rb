@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :dashboards
   resources :profiles, only: [:show, :edit]
   resources :searches, only: [:index]
-  resources :follows, only: [:index]
+  resources :followings, only: [:index, :show]
   resources :favorites, only: [:index]
 
 

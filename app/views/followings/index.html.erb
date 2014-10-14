@@ -1,0 +1,34 @@
+<div class="dash-flex-container">
+
+  <div class="dash-flex1">
+    <%= render 'rants/create_rant_form' %>
+  </div>
+
+
+  <div class="dash-flex2">
+
+
+
+    <h1 class="text-center rant-label">Following</h1>
+
+    <hr>
+
+      <% @current_user_followings.each do |follow|  %>
+      <div>
+        <span class="user-link"><%= link_to "#{follow.followed_user.first_name} #{follow.followed_user.last_name}", root_path %></span>
+
+      </div>
+
+      <div class="bottom-margin"></div>
+
+
+      <% end %>
+
+
+    
+
+
+  </div>
+
+
+</div>
