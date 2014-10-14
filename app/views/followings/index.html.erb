@@ -15,17 +15,19 @@
 
       <% @current_user_followings.each do |follow|  %>
       <div>
-        <span class="user-link"><%= link_to "#{follow.followed_user.first_name} #{follow.followed_user.last_name}", root_path %></span>
+        <span class="user-link"><%= link_to "#{follow.followed_user.first_name} #{follow.followed_user.last_name}", user_rants_path(follow.followed_user.id) %></span>
 
       </div>
+
+      <% if current_user.can_follow?(follow) %>
+        <%= follow_button follow.followed_user %>
+      <% end %>
 
       <div class="bottom-margin"></div>
 
 
       <% end %>
 
-
-    
 
 
   </div>

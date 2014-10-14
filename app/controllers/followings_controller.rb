@@ -8,7 +8,7 @@ class FollowingsController < ApplicationController
     # end form stuff
 
 
-    @users = User.all
+    @users = User.where.not(:id => current_user.id)
     @followers = FollowingRelationship.all
 
 
