@@ -10,10 +10,12 @@ class RantsController < ApplicationController
     # end form stuff
 
     @user = User.find(params[:user_id])
-
     @rants = @user.rants
-    # byebug
 
+    #   @rants.each do |rant|
+    #     @rants.favorites = Favorite.where('rant_id',rant.id).count
+    # end
+    # @favorites = Rants.where('rants.user_id' => @user).joins('rants.id','favorites.rant_id').
   end
 
   def show

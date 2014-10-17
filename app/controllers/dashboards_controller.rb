@@ -13,8 +13,6 @@ class DashboardsController < ApplicationController
     @rants = @user.rants
     @users = User.where.not(:id => current_user.id)
 
-
-
     @favorites = Favorite.all
   end
 

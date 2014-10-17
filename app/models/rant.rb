@@ -8,5 +8,13 @@ class Rant < ActiveRecord::Base
     where("LOWER(title) like LOWER(?) OR LOWER(verbage) like LOWER(?)", "%#{search}%", "%#{search}%")
   end
 
+  def self.favorite(rant)
+    rant.favorites = Favorite.where('rant_id',rant.id).count
+  end
+
+  def self.unfavorite()
+    @rants.favorites = Favorite.where('rant_id',rant.id).count
+  end
+
 
 end

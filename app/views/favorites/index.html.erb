@@ -34,8 +34,10 @@
       <% else %>
         <%= button_to 'Unfavorite', user_rant_favorite_path(current_user.id, favorite.rant.id), method: :delete %>
       <% end %>
-      <div class="bottom-margin"></div>
 
+          Favorites: <%= @favorites.where(:rant_id => favorite.rant.id).count %>
+
+      <div class="bottom-margin"></div>
 
 
     <% end %>
