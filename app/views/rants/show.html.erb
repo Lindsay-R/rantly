@@ -22,12 +22,12 @@
         <%= follow_button @user %>
       <% end %>
 
+
       <% if current_user.id != @user.id  %>
-            <% if @favorites.find_by(:rant_id => @rant.id, :user_id => current_user.id) == nil%>
-              <%= button_to 'Favorite', user_rant_favorite_path(current_user.id, @rant.id) %>
-            <% else %>
-              <%= button_to 'Unfavorite', user_rant_favorite_path(current_user.id, @rant.id), method: :delete %>
-            <% end %>
+
+        <!--calls favorites_helper with favorite_button method-->
+        <%= favorite_button @rant %>
+
         <% else %>
       <% end %>
 
