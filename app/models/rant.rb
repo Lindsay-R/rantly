@@ -12,9 +12,10 @@ class Rant < ActiveRecord::Base
     rant.favorites = Favorite.where('rant_id',rant.id).count
   end
 
-  def self.unfavorite()
-    @rants.favorites = Favorite.where('rant_id',rant.id).count
+  def self.unfavorite(rant)
+    rant.favorites = Favorite.where('rant_id',rant.id).count
   end
+
 
 
 end

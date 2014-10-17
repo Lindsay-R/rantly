@@ -5,12 +5,10 @@ class FavoritesController < ApplicationController
     @new_rant = Rant.new
     # end form stuff
 
-
     @users = User.where.not(:id => current_user.id)
     @favorites = Favorite.all
 
-
-    @current_user_favorites = @favorites.where("user_id = '#{@user.id}'")
+    @current_user_favorites = @favorites.where('user_id' => @user.id)
 
   end
 
